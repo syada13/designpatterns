@@ -1,0 +1,5 @@
+package com.suresh.strategy;
+
+public interface FlyBehavior {
+    public void fly();
+}
