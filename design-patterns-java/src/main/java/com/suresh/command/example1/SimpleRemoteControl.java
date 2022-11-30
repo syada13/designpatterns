@@ -1,4 +1,4 @@
-package com.suresh;
+package com.suresh.command.example1;
 
 /*
  * Using a command object.
