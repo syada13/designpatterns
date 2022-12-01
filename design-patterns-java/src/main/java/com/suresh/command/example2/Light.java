@@ -14,12 +14,12 @@ public class Light {
     }
 
     public void on() {
-        System.out.print("Turned light on!");
+        System.out.print(name + " light is on" + "\n");
 
     }
 
     public void off() {
-        System.out.print("Turned light off!");
+        System.out.print(name + " light is off" + "\n");
 
     }
 

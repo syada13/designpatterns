@@ -9,12 +9,12 @@ public class CeilingFan {
     }
 
     public void on() {
-        System.out.print("Turned Ceiling Fan on!");
+        System.out.print(name + " ceiling fan turned on" + "\n");
 
     }
 
     public void off() {
-        System.out.print("Turned Ceiling Fan off!");
+        System.out.print(name + "  ceiling fan turned off" + "\n");
 
     }
 

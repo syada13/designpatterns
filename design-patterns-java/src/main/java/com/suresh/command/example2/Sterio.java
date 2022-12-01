@@ -9,15 +9,19 @@ public class Sterio {
     }
 
     public void on() {
-        System.out.println("Sterio turned on");
+        System.out.println(name + " sterio turned on");
+    }
+
+    public void off() {
+        System.out.println(name + " sterio turned off" + "\n");
     }
 
     public void setCD() {
-        System.out.println("CD inserted and ready to play");
+        System.out.println(name + " sterio is set for CD input");
     }
 
     public void setVolume(int volume) {
-        System.out.println("Volume setup to:" + volume);
+        System.out.println(name + " sterio volume setup to " + volume);
     }
 
 }

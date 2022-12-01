@@ -9,7 +9,7 @@ public class CeilingFanOffCommand implements Command {
     }
 
     public void execute() {
-        ceilingFan.on();
+        ceilingFan.off();
     }
 
 }
