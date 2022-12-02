@@ -1,18 +1,23 @@
 package com.suresh.command.example2;
 
 /*
- * Invoker - The RemoteControl is going to handle On and Off commands
+ * Invoker - The RemoteControlWithUndo is going to handle On and Off commands
+ * Undo - We are adding new instance variable to track the last command invoked, then whenever
+ * the undo button is pressed, we retrieve the last  invoked command and invoke its undo button.
  */
 
-public class RemoteControl {
+public class RemoteControlWithUndo {
     Command[] onCommands;
     Command[] offCommands;
+    Command undoCommand;
 
     /*
      * In this constructor, we need to instantiate and initialise the On and Off
      * arrays.
+     * Just like other slots, undo starts off with a noCommand,so pressing undo
+     * before any other button won't do anything.
      */
-    public RemoteControl() {
+    public RemoteControlWithUndo() {
         onCommands = new Command[7];
         offCommands = new Command[7];
 
@@ -22,6 +27,7 @@ public class RemoteControl {
             offCommands[i] = noCommand;
 
         }
+        undoCommand = noCommand;
 
     }
 
@@ -37,11 +43,18 @@ public class RemoteControl {
 
     public void OnButtonWasPushed(int slot) {
         onCommands[slot].execute();
+        undoCommand = onCommands[slot];
 
     }
 
     public void OffButtonWasPushed(int slot) {
         offCommands[slot].execute();
+        undoCommand = offCommands[slot];
+    }
+
+    public void undoButtonWasPressed() {
+        undoCommand.undo();
+
     }
 
     /*

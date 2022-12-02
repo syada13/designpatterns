@@ -16,4 +16,8 @@ public class SterioOnWithCDCommand implements Command {
 
     }
 
+    public void undo() {
+        sterio.off();
+    }
+
 }

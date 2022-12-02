@@ -3,7 +3,7 @@ package com.suresh.command.example2;
 public class RemoteLoader {
     public static void main(String[] args) {
 
-        RemoteControl remoteControl = new RemoteControl(); // Create Invoker object
+        RemoteControlWithUndo remoteControl = new RemoteControlWithUndo(); // Create Invoker object
 
         // Create all the devices in their place
         Light livingRoomLight = new Light("Living Room");
@@ -44,12 +44,19 @@ public class RemoteLoader {
          * Here , we are using our overridden toString() method to print each remote
          * slot and the command assigned to it.
          * We then step through each slot and push its On and Off buttons
+         * System.out.println(remoteControl);
          */
-
-        System.out.println(remoteControl);
 
         remoteControl.OnButtonWasPushed(0);
         remoteControl.OffButtonWasPushed(0);
+        System.out.println(remoteControl);
+        remoteControl.undoButtonWasPressed();
+
+        remoteControl.OffButtonWasPushed(0);
+        remoteControl.OnButtonWasPushed(0);
+        System.out.println(remoteControl);
+        remoteControl.undoButtonWasPressed();
+
         remoteControl.OnButtonWasPushed(1);
         remoteControl.OffButtonWasPushed(1);
         remoteControl.OnButtonWasPushed(2);

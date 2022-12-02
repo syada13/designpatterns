@@ -14,4 +14,8 @@ public class SterioOffCommand implements Command {
 
     }
 
+    public void undo() {
+        sterio.on();
+    }
+
 }

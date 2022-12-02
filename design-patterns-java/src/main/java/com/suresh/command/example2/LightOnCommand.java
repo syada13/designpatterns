@@ -11,4 +11,11 @@ public class LightOnCommand implements Command {
     public void execute() {
         light.on();
     }
+
+    /*
+     * Execute() method turns the light on and undo() method simply turns light off
+     */
+    public void undo() {
+        light.off();
+    }
 }
