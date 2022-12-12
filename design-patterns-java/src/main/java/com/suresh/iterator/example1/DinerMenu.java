@@ -26,8 +26,12 @@ public class DinerMenu {
 
     }
 
-    public MenuItem[] getMenuItems() {
-        return menuItems;
+    /*
+     * It creates a DinerMenuIterator from the menuItems array and return to the
+     * client.
+     */
+    public Iterator createIterator() {
+        return new DinerMenuIterator(menuItems);
     }
 
 }
