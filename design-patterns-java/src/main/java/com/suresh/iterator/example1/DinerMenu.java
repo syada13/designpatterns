@@ -29,6 +29,10 @@ public class DinerMenu {
     /*
      * It creates a DinerMenuIterator from the menuItems array and return to the
      * client.
+     * We are returning the Iterator interface. The client doesn't need to know how
+     * the MenuItems are maintained in the DinerMenu,
+     * nor does it need to know how the DinerMenuIterator is implemented. It just
+     * need to use the iterator to step through the items in the menu.
      */
     public Iterator createIterator() {
         return new DinerMenuIterator(menuItems);
